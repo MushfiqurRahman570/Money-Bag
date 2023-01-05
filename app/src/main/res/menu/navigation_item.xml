@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/qr"
+        android:title="My Qr"
+        android:icon="@drawable/qrcode"/>
+    <item
+        android:id="@+id/offer"
+        android:title="Offer"
+        android:icon="@drawable/gift"/>
+    <item
+        android:id="@+id/scan_qr"
+        android:title="Scan Qr"
+        android:icon="@drawable/barcode_scanner"/>
+    <item
+        android:id="@+id/sign_off"
+        android:title="Sign Off"
+        android:icon="@drawable/logout"/>
+</menu>

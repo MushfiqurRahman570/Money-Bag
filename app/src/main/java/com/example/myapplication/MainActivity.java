@@ -32,37 +32,30 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_View);
         imageMenu = findViewById(R.id.imageMenu);
 
+
         toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Drawar click event
-        // Drawer item Click event ------
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
                     case R.id.qr:
-                        Toast.makeText(MainActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "My Qr", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
                         break;
 
                     case R.id.offer:
-                        Toast.makeText(MainActivity.this, "Facebook", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Offer", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
                         break;
-
                 }
 
                 return false;
             }
         });
-        //------------------------------
-
-        // ------------------------
-        // App Bar Click Event
         imageMenu = findViewById(R.id.imageMenu);
 
         imageMenu.setOnClickListener(new View.OnClickListener() {
@@ -73,10 +66,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        // ------------------------
-
-
-    } // OnCreate Method Close here ==============
-
-} // Public Class CLose Here =====================
+    }
+}

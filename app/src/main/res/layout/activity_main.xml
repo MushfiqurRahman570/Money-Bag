@@ -118,7 +118,8 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:id="@+id/scanQr">
 
                         <TextView
                             android:id="@+id/scan_text"
@@ -153,7 +154,8 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:id="@+id/myQr">
 
                         <TextView
                             android:id="@+id/my_text"
@@ -290,7 +292,7 @@
                             android:layout_below="@id/add_img"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:text="Scan Qr"
+                            android:text="Add Money"
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold" />

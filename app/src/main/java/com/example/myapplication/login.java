@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static android.Manifest.permission_group.PHONE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 
 public class login extends AppCompatActivity {
 
+
     EditText inputNumber, inputPass;
     Button login,btn;
 
@@ -17,8 +20,8 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ogin);
-        inputNumber = findViewById(R.id.number);
+        setContentView(R.layout.activity_login);
+        inputNumber = findViewById(R.id.Number);
         inputPass = findViewById(R.id.password);
         login= findViewById(R.id.loginButton);
         btn = findViewById(R.id.loginButton);
@@ -26,7 +29,9 @@ public class login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String phone= inputNumber.getText().toString();
                 checkCrededentials();
+                getIntent().putExtra(PHONE,phone);
             }
         });
 
@@ -36,6 +41,7 @@ public class login extends AppCompatActivity {
     }
 
     private void checkCrededentials(){
+
         String number = inputNumber.getText().toString();
         String password= inputPass.getText().toString();
 
@@ -55,6 +61,18 @@ public class login extends AppCompatActivity {
             });
         }
     }
+
+    public String number;
+
+    public String getName() {
+        return number;
+    }
+
+    public void setName(String number) {
+        this.number = number;
+    }
+
+
     private void showError(EditText input, String s){
         input.setError(s);
         input.requestFocus();

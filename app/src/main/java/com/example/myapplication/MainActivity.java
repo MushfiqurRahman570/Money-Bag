@@ -8,12 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -27,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     ImageView imageMenu;
-    Button btnScan;
+    RelativeLayout scan;
+    RelativeLayout myQr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +42,16 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_View);
         imageMenu = findViewById(R.id.imageMenu);
-        btnScan = findViewById(R.id.scan_qr);
+        scan = findViewById(R.id.scanQr);
+        myQr = findViewById(R.id.myQr);
+
+        myQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, MyQr.class);
+                startActivity(i);
+            }
+        });
 
 
         toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.nav_open, R.string.nav_close);
@@ -73,16 +87,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        btnScan.setOnClickListener(v->
+        scan.setOnClickListener(v->
         {
             ScanCode();
         });
     }
 
     private void ScanCode() {
-        ScanOptions options = new ScanOptions();
+        ScanOptions  options = new ScanOptions();
         options.setPrompt("Volume up to flash on");
         options.setBeepEnabled(true);
         options.setOrientationLocked(true);
@@ -90,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         barLauncher.launch(options);
     }
 
-    ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result->{
+    ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(),result->{
         if(result.getContents() != null)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

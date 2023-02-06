@@ -101,13 +101,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/upBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Signup"
+            android:onClick="registerUser"
+            android:layout_marginTop="30sp"
             android:backgroundTint="#000"
             android:textColor="#fff"/>
 
         <Button
+            android:id="@+id/logBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login Hare"

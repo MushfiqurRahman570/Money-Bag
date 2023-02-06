@@ -1,8 +1,8 @@
 package com.example.myapplication;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,7 +39,7 @@ public class MyQr extends AppCompatActivity {
         //ImageView for generated QR code
 
         ImageView imageCode = findViewById(R.id.imageCode);
-        btnGenerate.setOnClickListener(v -> {
+        btnGenerate.setOnClickListener((View v) -> {
             //getting text from input text field.
 
             String myText = uuid.toString();

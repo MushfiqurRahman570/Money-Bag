@@ -14,6 +14,10 @@
         android:title="Scan Qr"
         android:icon="@drawable/barcode_scanner"/>
     <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
+    <item
         android:id="@+id/sign_off"
         android:title="Sign Off"
         android:icon="@drawable/logout"/>

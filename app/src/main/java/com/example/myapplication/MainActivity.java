@@ -63,8 +63,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-                    case R.id.qr:
-                        Toast.makeText(MainActivity.this, "My Qr", Toast.LENGTH_SHORT).show();
+                    case R.id.profile:
+
+                        Bundle phone = getIntent().getExtras();
+                        String uid = phone.getString("phoneNo");
+                        Intent i = new Intent(MainActivity.this, profile.class);
+
+                        i.putExtra("phoneNo",uid);
+                        startActivity(i);
+
+//                        Toast.makeText(MainActivity.this, "My Qr", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
                         break;
 

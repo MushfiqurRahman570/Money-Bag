@@ -5,14 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
     tools:context=".scanQr">
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/img"
-        android:src="@drawable/copy"
-        android:layout_marginTop="500sp"
-        android:layout_gravity="center_horizontal"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt"
+        android:textColor="@color/black"
+        android:hint="Type here"
+        android:textSize="20sp"
+        android:layout_gravity="top"/>
+
 
 </LinearLayout>

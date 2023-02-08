@@ -13,6 +13,5 @@ public class scanQr extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
 
-        imageView = findViewById(R.id.img);
     }
 }

@@ -7,6 +7,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,40 +25,40 @@ import java.util.UUID;
 
 public class MyQr extends AppCompatActivity {
 
+    public Button generate;
+    public TextView textView;
+    public ImageView qr_code;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_qr);
 
-        UUID uuid= UUID.randomUUID();
+        generate = findViewById(R.id.btnGenerate);
+        qr_code = findViewById(R.id.imageCode);
+        textView = findViewById(R.id.txt);
 
-        //Button for generating QR code
-        Button btnGenerate = findViewById(R.id.btnGenerate);
-        //Text will be entered here to generate QR code
-//        EditText etText = findViewById(R.id.etText);
-        //ImageView for generated QR code
+        generate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = textView.getText().toString();
 
-        ImageView imageCode = findViewById(R.id.imageCode);
-        btnGenerate.setOnClickListener((View v) -> {
-            //getting text from input text field.
-
-            String myText = uuid.toString();
-            //initializing MultiFormatWriter for QR code
-            MultiFormatWriter mWriter = new MultiFormatWriter();
-            try {
-                //BitMatrix class to encode entered text and set Width & Height
-                BitMatrix mMatrix = mWriter.encode(myText, BarcodeFormat.QR_CODE, 800,800);
-                BarcodeEncoder mEncoder = new BarcodeEncoder();
-                Bitmap mBitmap = mEncoder.createBitmap(mMatrix);//creating bitmap of code
-                imageCode.setImageBitmap(mBitmap);//Setting generated QR code to imageView
-                // to hide the keyboard
-//                InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//                manager.hideSoftInputFromWindow(uuid.getApplicationWindowToken(), 0);
-            } catch (WriterException e) {
-                e.printStackTrace();
+                if(text!=null && !text.isEmpty()){
+                    try {
+                        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+                        BitMatrix bitMatrix = multiFormatWriter.encode(text,BarcodeFormat.QR_CODE,500,500);
+                        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                        Bitmap bitmap= barcodeEncoder.createBitmap(bitMatrix);
+                        qr_code.setImageBitmap(bitmap);
+                    }catch (WriterException e){
+                        e.printStackTrace();
+                    }
+                }
             }
         });
+
+
+
     }
 
 

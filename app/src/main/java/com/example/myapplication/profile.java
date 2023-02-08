@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import static com.google.android.material.color.utilities.MaterialDynamicColors.error;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,12 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.myapplication.sign.login;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,15 +21,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class profile extends AppCompatActivity {
 
-    TextInputLayout fullName, email, phoneNo, userName;
-    TextView fullNameField, usernameField;
+
+    TextView fullNameField, usernameField,fullName, email, phoneNo, userName;
     ImageView pro_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         fullName = findViewById(R.id.pro_fullName);
         email = findViewById(R.id.pr_email);
         phoneNo = findViewById(R.id.pro_number);
@@ -86,10 +83,10 @@ public class profile extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     UserhelperClass userhelperClass = snapshot.getValue(UserhelperClass.class);
 
-                    phoneNo.getEditText().setText(userhelperClass.phoneNo.toString());
-                    userName.getEditText().setText(userhelperClass.username.toString());
-                    email.getEditText().setText(userhelperClass.email.toString());
-                    fullName.getEditText().setText(userhelperClass.name.toString());
+                    phoneNo.setText(userhelperClass.phoneNo.toString());
+                    userName.setText(userhelperClass.username.toString());
+                    email.setText(userhelperClass.email.toString());
+                    fullName.setText(userhelperClass.name.toString());
                     fullNameField.setText(userhelperClass.name.toString());
                     usernameField.setText(userhelperClass.username.toString());
 

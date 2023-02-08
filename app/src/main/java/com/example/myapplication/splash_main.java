@@ -22,7 +22,6 @@ public class splash_main extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         button = findViewById(R.id.button);
-        b = findViewById(R.id.button);
 
         SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         String FirsTime = preferences.getString("FirstTimeInstall","");

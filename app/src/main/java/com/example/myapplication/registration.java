@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.myapplication.databinding.ActivityMainBinding;
 import com.example.myapplication.sign.login;
+import com.example.myapplication.sign.otp;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -117,9 +119,9 @@ public class registration extends AppCompatActivity {
             return true;
         }
     }
-    //        if (!validateEmail()|!validateName()|!validatePhone()|!validateUserName()|!validatePassword()){
-//            return;}-
+
     public void registerUser(View view){
+
 
         String name = regName.getEditText().getText().toString();
         String userName = reUsername.getEditText().getText().toString();
@@ -127,9 +129,38 @@ public class registration extends AppCompatActivity {
         String regPhoneNo = regPhone.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
 
-        UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
-        reference.child(regPhoneNo).setValue(userhelperClass);
+
+//        try {
+//            if (!validateEmail()|!validateName()|!validatePhone()|!validateUserName()|!validatePassword()){
+//            return;}
+
+        try {
+            UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
+            reference.child(regPhoneNo).setValue(userhelperClass);
+            Toast.makeText(this, "Your Account has been Created Successfully", Toast.LENGTH_SHORT).show();
+
+        } catch(Exception e){
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }finally {
+            Intent intent = new Intent(getApplicationContext(), otp.class);
+            intent.putExtra("phoneNo", regPhoneNo);
+            startActivity(intent);
+        }
+//        catch (Exception e){
+//            Toast.makeText(this, "No Field Data", Toast.LENGTH_SHORT).show();
+//        }
+
+//        UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
+//        reference.child(regPhoneNo).setValue(userhelperClass);
+//        Toast.makeText(this, "Your Account has been Created Successfully", Toast.LENGTH_SHORT).show();
+
+//        Intent intent = new Intent(getApplicationContext(), otp.class);
+//        intent.putExtra("phoneNo", regPhoneNo);
+//        startActivity(intent);
+
     }
+
+
 
 }
 

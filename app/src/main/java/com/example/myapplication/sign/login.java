@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
@@ -30,6 +31,7 @@ public class login extends AppCompatActivity {
     Button signup;
     Button signIn;
     TextInputLayout number, password;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class login extends AppCompatActivity {
         signIn = findViewById(R.id.signIn);
         number = findViewById(R.id.number);
         password = findViewById(R.id.signPassword);
-
+        progressBar = findViewById(R.id.progressBar);
 
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +121,7 @@ public class login extends AppCompatActivity {
                         intent.putExtra("phoneNo", phoneNoFromDB);
 
                         startActivity(intent);
+                        progressBar.setVisibility(View.VISIBLE);
 
                     } else {
                         password.setError("Wrong Password");

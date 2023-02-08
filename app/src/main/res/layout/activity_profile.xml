@@ -104,6 +104,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="125dp"
@@ -148,80 +149,96 @@
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20sp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pro_fullName"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:focusableInTouchMode="true"
-                android:hint="Full Name">
+                android:layout_margin="15dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="#fece2f"
+                app:cardElevation="10dp">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:id="@+id/pro_fullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/person"
+                    android:layout_margin="10sp"
+                    android:drawablePadding="20dp">
+
+                </TextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_margin="15dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="#fece2f"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/pr_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/mail"
+                    android:layout_margin="10dp"
                     android:drawablePadding="10dp">
 
-                </com.google.android.material.textfield.TextInputEditText>
+                </TextView>
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pr_email"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:hint="E-mail">
+                android:layout_margin="15dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="#fece2f"
+                app:cardElevation="10dp">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
+                    android:id="@+id/pro_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/phone"
+                    android:layout_margin="10dp"
+                    android:drawablePadding="20dp">
+
+                </TextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_margin="15dp"
+                android:layout_weight="2"
+                app:cardBackgroundColor="#fece2f"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/pro_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/person"
+                    android:layout_margin="10dp"
                     android:drawablePadding="10dp">
 
-                </com.google.android.material.textfield.TextInputEditText>
+                </TextView>
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pro_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Number">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/person"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pro_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="User Name">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/person"
-                    android:drawablePadding="10dp">
-
-                </com.google.android.material.textfield.TextInputEditText>
-
-            </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </LinearLayout>

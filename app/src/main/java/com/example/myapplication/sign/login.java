@@ -122,6 +122,7 @@ public class login extends AppCompatActivity {
 
                         startActivity(intent);
                         progressBar.setVisibility(View.VISIBLE);
+                        finish();
 
                     } else {
                         password.setError("Wrong Password");

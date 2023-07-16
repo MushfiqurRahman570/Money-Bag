@@ -132,7 +132,8 @@ public class registration extends AppCompatActivity {
 
 //        try {
 //            if (!validateEmail()|!validateName()|!validatePhone()|!validateUserName()|!validatePassword()){
-//            return;}
+//            return;
+//            }
 
         try {
             UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
@@ -146,17 +147,6 @@ public class registration extends AppCompatActivity {
             intent.putExtra("phoneNo", regPhoneNo);
             startActivity(intent);
         }
-//        catch (Exception e){
-//            Toast.makeText(this, "No Field Data", Toast.LENGTH_SHORT).show();
-//        }
-
-//        UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
-//        reference.child(regPhoneNo).setValue(userhelperClass);
-//        Toast.makeText(this, "Your Account has been Created Successfully", Toast.LENGTH_SHORT).show();
-
-//        Intent intent = new Intent(getApplicationContext(), otp.class);
-//        intent.putExtra("phoneNo", regPhoneNo);
-//        startActivity(intent);
 
     }
 

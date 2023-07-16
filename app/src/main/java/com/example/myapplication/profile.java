@@ -46,31 +46,7 @@ public class profile extends AppCompatActivity {
         });
         getData();
 
-//        User();
-//        showAllUserData();
-
-
     }
-
-
-
-
-
-//    private void showAllUserData() {
-//        Intent intent = getIntent();
-//        String user_username = intent.getStringExtra("username");
-//        String user_name = intent.getStringExtra("name");
-//        String user_email = intent.getStringExtra("email");
-//        String user_phoneNo = intent.getStringExtra("phoneNo");
-//        String user_password = intent.getStringExtra("username");
-//
-//        fullNameField.setText(user_name);
-//        usernameField.setText(user_username);
-//        fullName.getEditText().setText(user_name);
-//        email.getEditText().setText(user_email);
-//        phoneNo.getEditText().setText(user_phoneNo);
-//        userName.getEditText().setText(user_password);
-//    }
     private void getData(){
         FirebaseDatabase myDataBase= FirebaseDatabase.getInstance();
         DatabaseReference myDB = myDataBase.getReference("users");
@@ -98,42 +74,5 @@ public class profile extends AppCompatActivity {
                 }
             });
         }
-        else {
-
-        }
     }
-//    public void User() {
-//        final String userEnteredUsername = phoneNo.getEditText().getText().toString().trim();
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-//        Query checkUser = reference.orderByChild("phoneNo").equalTo(userEnteredUsername);
-//
-//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if (dataSnapshot.exists()) {
-//
-//                    phoneNo.setError(null);
-//                    phoneNo.setErrorEnabled(false);
-//                    String nameFromDB = dataSnapshot.child(userEnteredUsername).child("name").getValue(String.class);
-//                    String usernameFromDB = dataSnapshot.child(userEnteredUsername).child("username").getValue(String.class);
-//                    String phoneNoFromDB = dataSnapshot.child(userEnteredUsername).child("phoneNo").getValue(String.class);
-//                    String emailFromDB = dataSnapshot.child(userEnteredUsername).child("email").getValue(String.class);
-//                    Intent intent = new Intent(getApplicationContext(), profile.class);
-//
-//                    intent.putExtra("name", nameFromDB);
-//                    intent.putExtra("username", usernameFromDB);
-//                    intent.putExtra("email", emailFromDB);
-//                    intent.putExtra("phoneNo", phoneNoFromDB);
-//
-//                    startActivity(intent);
-//
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
     }

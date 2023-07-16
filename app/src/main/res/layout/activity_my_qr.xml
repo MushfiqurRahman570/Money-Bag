@@ -9,16 +9,33 @@
     android:orientation="vertical"
     tools:context=".MyQr">
 
-    <EditText
-        android:id="@+id/txt"
+
+    <LinearLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Type something"
-        android:layout_margin="40sp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="?actionBarSize"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:background="#004463"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="300sp"
+            android:src="@drawable/back"
+            app:tint="#FFFFFF" />
+
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/btnGenerate"
@@ -26,15 +43,16 @@
         android:layout_height="wrap_content"
         android:onClick="QrGenerate"
         android:text="Generate code"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt" />
+        app:layout_constraintTop_toTopOf="parent" />
     <!-- imageview to display the generated QR code -->
     <ImageView
         android:id="@+id/imageCode"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

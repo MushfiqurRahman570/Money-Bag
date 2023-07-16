@@ -35,7 +35,7 @@ public class splash_main extends AppCompatActivity {
             editor.putString("FirstTimeInstall","yes");
             editor.apply();
 
-        }
+        }finish();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

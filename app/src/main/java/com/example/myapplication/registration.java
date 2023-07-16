@@ -129,24 +129,28 @@ public class registration extends AppCompatActivity {
         String regPhoneNo = regPhone.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
 
-
+        Intent intent = new Intent(getApplicationContext(), otp.class);
+        intent.putExtra("phoneNo", regPhoneNo);
+        startActivity(intent);
 //        try {
 //            if (!validateEmail()|!validateName()|!validatePhone()|!validateUserName()|!validatePassword()){
 //            return;
 //            }
-
-        try {
-            UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
-            reference.child(regPhoneNo).setValue(userhelperClass);
-            Toast.makeText(this, "Your Account has been Created Successfully", Toast.LENGTH_SHORT).show();
-
-        } catch(Exception e){
-            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-        }finally {
-            Intent intent = new Intent(getApplicationContext(), otp.class);
-            intent.putExtra("phoneNo", regPhoneNo);
-            startActivity(intent);
-        }
+//
+//        try {
+//            UserhelperClass userhelperClass = new UserhelperClass(name, userName, email, regPhoneNo, password);
+//            reference.child(regPhoneNo).setValue(userhelperClass);
+//            Toast.makeText(this, "Your Account has been Created Successfully", Toast.LENGTH_SHORT).show();
+//
+//        } catch(Exception e){
+//            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+//        }finally {
+//            Intent intent = new Intent(getApplica
+//
+//            for bangladeshtionContext(), otp.class);
+//            intent.putExtra("phoneNo", regPhoneNo);
+//            startActivity(intent);
+//        }
 
     }
 
